@@ -27,7 +27,7 @@ public class LoginManager {
 
     public void logout(){
         if(isLoggedIn()){
-            System.out.println("There is not logged in user");
+            System.out.println("There is no logged in user");
         }else{
             loggedInUser = null;
             System.out.println("Logged out successfully!");
