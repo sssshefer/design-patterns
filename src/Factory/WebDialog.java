@@ -1,4 +1,7 @@
 package Factory;
 
-public class WebDialog {
+public class WebDialog  extends Dialog{
+    public Button createButton(){
+        return new HTMLButton();
+    }
 }

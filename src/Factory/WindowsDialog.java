@@ -1,4 +1,7 @@
 package Factory;
 
-public class WindowsDialog {
+public class WindowsDialog extends Dialog {
+    public Button createButton(){
+        return new WindowsButton();
+    }
 }
