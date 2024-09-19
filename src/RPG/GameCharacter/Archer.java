@@ -2,8 +2,8 @@ package RPG.GameCharacter;
 
 public class Archer extends GameCharacter {
     public Archer() {
-        health += 8;
-        mana += 7;
+        health += 20;
+        mana += 20;
         dexterity += 1;
     }
 

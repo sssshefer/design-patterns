@@ -9,4 +9,11 @@ public class BalancedStrategy implements CombatStrategy{
         gameCharacter.setBaseDefense(gameCharacter.getBaseDefense() * 3);
         System.out.println("Balanced Strategy: normal damage, normal defense.");
     }
+
+    @Override
+    public void deselectStrategy(GameCharacter gameCharacter){
+        gameCharacter.setBaseDamage(gameCharacter.getBaseDamage() / 3);
+        gameCharacter.setBaseDefense(gameCharacter.getBaseDefense() / 3);
+        System.out.println("Balanced Strategy is no longer active");
+    }
 }

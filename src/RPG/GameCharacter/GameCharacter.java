@@ -30,8 +30,8 @@ abstract public class GameCharacter implements WorldListener {
 
 
     GameCharacter() {
-        this.health = 10;
-        this.mana = 10;
+        this.health = 100;
+        this.mana = 100;
 
         this.power = 1;
         this.dexterity = 1;
@@ -40,16 +40,15 @@ abstract public class GameCharacter implements WorldListener {
         this.inventory = new Inventory();
         this.exp = 0;
         this.lvl = 1;
-        this.baseDamage = 1;
-        this.baseDefense = 1;
-
+        this.baseDamage = 7;
+        this.baseDefense = 2;
     }
 
     GameCharacter(String name) {
         this.name = name;
 
-        this.health = 10;
-        this.mana = 10;
+        this.health = 100;
+        this.mana = 100;
 
         this.power = 1;
         this.dexterity = 1;
@@ -58,8 +57,8 @@ abstract public class GameCharacter implements WorldListener {
         this.inventory = new Inventory();
         this.exp = 0;
         this.lvl = 1;
-        this.baseDamage = 1;
-        this.baseDefense = 1;
+        this.baseDamage = 7;
+        this.baseDefense = 2;
 
     }
 
@@ -81,6 +80,10 @@ abstract public class GameCharacter implements WorldListener {
 
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
+    }
+
+    public void setEquippedWeapon(Weapon equippedWeapon) {
+        this.equippedWeapon = equippedWeapon;
     }
 
     public int getBaseDamage() {
@@ -106,7 +109,6 @@ abstract public class GameCharacter implements WorldListener {
     public void setBaseDefense(int baseDefense) {
         this.baseDefense = baseDefense;
     }
-
 
 
     public int getCoreCharacterSkill() {
@@ -139,9 +141,10 @@ abstract public class GameCharacter implements WorldListener {
         return lvl;
     }
 
-    public int receiveDamage(int damage){
-            setHealth(damage - baseDefense);
-            return damage - baseDefense;
+    public int receiveDamage(int damage) {
+        int finalDamage = Math.max(damage - baseDefense, 0);
+        setHealth(health - finalDamage);
+        return finalDamage;
     }
 
     public void setLvl(int lvl) {
@@ -159,7 +162,7 @@ abstract public class GameCharacter implements WorldListener {
             System.out.println("All players received +" + 5 + " damage because of the day time ");
         } else {
             setBaseDamage(getBaseDamage() - 5);
-            System.out.println("All players damage was reduced by  +" + 5 + " because of the night time");
+            System.out.println("All players damage was reduced by  " + 5 + " because of the night time");
         }
     }
 

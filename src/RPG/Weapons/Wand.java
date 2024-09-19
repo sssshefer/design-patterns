@@ -1,9 +1,11 @@
 package RPG.Weapons;
 
-import RPG.GameCharacter.GameCharacter;
+import RPG.GameCharacter.Mage;
 
 public class Wand extends Weapon{
-    Wand(String name, int baseDamage, GameCharacter bestFitFor){
-        super(name, baseDamage, bestFitFor);
+
+    public Wand(String name, int baseDamage){
+        super(name, baseDamage, new Mage());
     }
+
 }

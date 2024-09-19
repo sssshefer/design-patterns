@@ -2,8 +2,8 @@ package RPG.GameCharacter;
 
 public class Mage extends GameCharacter {
     public Mage() {
-        mana += 10;
-        health += 5;
+        mana += 30;
+        health += 20;
         intelligence += 1;
     }
 

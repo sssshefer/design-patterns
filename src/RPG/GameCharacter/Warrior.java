@@ -2,8 +2,8 @@ package RPG.GameCharacter;
 
 public class Warrior extends GameCharacter {
     public Warrior() {
-        health += 10;
-        mana += 5;
+        health += 30;
+        mana += 10;
         power += 1;
     }
 

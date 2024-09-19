@@ -19,9 +19,10 @@ public class EquipWeapon extends Action {
     @Override
     public boolean execute() {
         if (inventory.isContainItem(weapon)) {
-            inventory.addItem(equippedWeapon);
-            this.equippedWeapon = weapon;
-            inventory.removeItem(weapon);
+            gameCharacter.getInventory().addItem(equippedWeapon);
+            gameCharacter.getInventory().removeItem(weapon);
+            gameCharacter.setEquippedWeapon(weapon);
+
             return true;
         }
         return false;

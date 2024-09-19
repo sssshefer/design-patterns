@@ -22,7 +22,6 @@ public class Attack extends Action {
             baseWeaponDamage = equippedWeapon.getBaseDamage();
             boolean isWeaponFitCharacter = gameCharacter.equals(bestFitFor);
             fitWeaponMultiplication = isWeaponFitCharacter ? 2 : 1;
-
         } else {
             baseWeaponDamage = 1;
             fitWeaponMultiplication = 1;
@@ -32,6 +31,7 @@ public class Attack extends Action {
 
         System.out.println(gameCharacter.getName() + "Damage " + finalDamage + " hp");
         int receivedDamage = target.receiveDamage(finalDamage);
+        System.out.println(target.getName() + " base defense is " + target.getBaseDefense());
         System.out.println(target.getName() + "Receives " + receivedDamage + " hp");
 
         gameCharacter.setExp(gameCharacter.getExp() + finalDamage);

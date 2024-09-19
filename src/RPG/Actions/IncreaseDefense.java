@@ -9,7 +9,7 @@ public class IncreaseDefense extends Action {
 
     @Override
     public boolean execute() {
-        gameCharacter.setBaseDefense(gameCharacter.getBaseDefense() + 5);
+        gameCharacter.setBaseDefense(gameCharacter.getBaseDefense() + 3);
         return true;
     }
 }
